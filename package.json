@@ -1,0 +1,15 @@
+{
+  "name": "hbase-cleaner",
+  "main": "cleaner.js",
+  "version": "0.0.1",
+  "scripts": {
+    "install": "npm update"
+  },
+  "dependencies": {
+    "hbase": "0.1.12"
+  },
+  "publishConfig": {
+    "registry":
+        "http://sonatype-nexus.livetex.ru/nexus/content/repositories/livetex-npm-new/"
+  }
+}
