@@ -21,9 +21,11 @@ function findRows() {
     } else {
       if (cells) {
         var l = cells.length;
+        var start_del_time = Date.now();
         deleteRows(cells, function(deleted) {
-          console.log('scan:', l);
+          console.log('\nscan:', l);
           console.log('delete:', deleted);
+          console.log('time:',  (Date.now() - start_del_time) + ' ms.');
           scanner.get(handler);
         });
       } else {
