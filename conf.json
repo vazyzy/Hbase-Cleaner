@@ -2,8 +2,8 @@
   "hbase_host": "hbase.global.livetex",
   "hbase_port": "8080",
   "params": {
-    "startTime": "1428999908817",
-    "endTime": "1429999908817",
-    "batch": "10"
+    "startTime": "1388534400000",
+    "endTime": "1498535400000",
+    "batch": "10000000"
  }
 }
