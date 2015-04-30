@@ -21,12 +21,13 @@ function findRows() {
     } else {
       if (cells) {
         var l = cells.length;
-        deleteRows(cells, function() {
-          console.log('delete batch:', l);
+        deleteRows(cells, function(deleted) {
+          console.log('scan:', l);
+          console.log('delete:', deleted);
           scanner.get(handler);
         });
       } else {
-        console.log('finish for period: ', params);
+        console.log('finish for: ', params);
         scanner.delete();
       }
     }
@@ -36,13 +37,19 @@ function findRows() {
 }
 
 function deleteRows(cells, complete) {
-
+ var count = 0;
   function del(cell){
     client.getRow(tableName, cell['key']).delete(function(err, a) {
+      if (err) {
+        console.log(err);
+      } else {
+        count++
+      }
+
       if (cells.length > 0){
         del(cells.shift());
       } else {
-        complete();
+        complete(count);
       }
     })
   }

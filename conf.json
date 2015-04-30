@@ -3,7 +3,7 @@
   "hbase_port": "8080",
   "params": {
     "startTime": "1426710107817",
-    "endTime": "1426999908817",
+    "endTime": "1427999908817",
     "batch": "10000"
  }
 }
